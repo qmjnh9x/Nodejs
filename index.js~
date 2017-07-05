@@ -1,0 +1,60 @@
+var express = require('express')();
+var http = require('http').Server(express);
+var ip = require('ip');
+var mysql = require('mysql');
+
+var socketio = require('socket.io');
+
+const port = 1337;
+
+//Open Server
+/*
+var app = http.createServer(function (req,res) {
+	res.writeHead('Content-Head','text/html');
+	res.end('Hello World');
+}).listen(port);
+*/
+//var app = http.createServer().listen(port);
+console.log(ip.address()+":"+port);
+
+
+//Socket
+//var io = socketio(express);
+express.get('/',function (req,res) {
+	res.sendFile(__dirname + "/index.html");
+	console.log(__dirname + '/index.html');
+});
+io.on('connection',function (socket) {
+	//Nhan tu Client
+	socket.on('add user',function(msg){
+		socket.username = msg;
+		console.log("1 user vua duoc dang ky: " + socket.username);
+		//Goi nguoc lai client 1 mang json
+		io.emit('add user',{
+			username : socket.username
+		});
+	});
+	//Nhan tin nhan tu client
+	socket.on('chat message',function(msg){
+		io.emit('chat message',{
+			username : socket.username,
+			msg : msg
+		});
+	});
+	socket.on('disconnect',function (msg) {
+		console.log(socket.username + " da thoat");
+		io.emit('user left',{
+			username : socket.username
+		});
+	});
+});
+//connect MySQL
+var connection = mysql.createConnection({
+	host : 'localhost',
+	user: 'root',
+	password : 'Dichoinhe1',
+	database : 'linax'
+});
+connection.connect(function(err,result){
+	if(err) { console.log(err); return;}
+});

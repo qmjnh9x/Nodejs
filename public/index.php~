@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<link ref="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+		<script src="controllers/app.js"></script>
+		<script src="controllers/header.controller.js"></script>
+		<script src="controllers/body.controller.js"></script>
+	</head>
+	<body ng-app="angularLinax">
+		<div id="mainBoard">
+			<div id="header" ng-controller="headerCtrl" align="center">
+				<img class="imgLeft" src="{{img[0].src}}">
+				<img class="imgRight" src="{{img[1].src}}">
+				<label class="title" ng-bind="title"></label>
+			</div>
+		</div>
+	</body>
+</html>

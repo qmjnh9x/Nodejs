@@ -1,0 +1,11 @@
+[
+	{"NAME": "CORE 1","PLAN" : 600,"ACTUAL" : 0,"SHIFT_1" : 0, "SHIFT_2" : 0, "SHIFT_3" : 0},
+	{"NAME": "CORE 2","PLAN" : 600,"ACTUAL" : 0,"SHIFT_1" : 0, "SHIFT_2" : 0, "SHIFT_3" : 0},
+	{"NAME": "CORE 3","PLAN" : 600,"ACTUAL" : 0,"SHIFT_1" : 0, "SHIFT_2" : 0, "SHIFT_3" : 0},
+	{"NAME": "CORE 4","PLAN" : 600,"ACTUAL" : 0,"SHIFT_1" : 0, "SHIFT_2" : 0, "SHIFT_3" : 0},
+	{"NAME": "CORE 5","PLAN" : 600,"ACTUAL" : 0,"SHIFT_1" : 0, "SHIFT_2" : 0, "SHIFT_3" : 0},
+	{"NAME": "IMR 1","PLAN" : 600,"ACTUAL" : 0,"SHIFT_1" : 0, "SHIFT_2" : 0, "SHIFT_3" : 0},
+	{"NAME": "IMR 2","PLAN" : 600,"ACTUAL" : 0,"SHIFT_1" : 0, "SHIFT_2" : 0, "SHIFT_3" : 0},
+	{"NAME": "KWC","PLAN" : 600,"ACTUAL" : 0,"SHIFT_1" : 0, "SHIFT_2" : 0, "SHIFT_3" : 0},
+	{"NAME": "ZN CAST.","PLAN" : 600,"ACTUAL" : 0,"SHIFT_1" : 0, "SHIFT_2" : 0, "SHIFT_3" : 0}
+] 

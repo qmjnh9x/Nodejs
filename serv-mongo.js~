@@ -1,0 +1,14 @@
+var express = require('express');
+var app = express();
+var path = require('path');
+
+var databaseUrl = "sampledb";
+var collections = ["things"];
+var db = require("mongojs").connect(databaseUrl,collections);
+
+app.configure(function(){
+	app.use(express.bodyParser());
+	app.use(express.methodOverride());
+	app.use(app.router);
+	app.use(express.static(path.join(__dirname,"public");
+});

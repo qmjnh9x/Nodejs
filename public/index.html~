@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AngularJS + NodeJS</title>
+		<meta charset="UTF-8">
+		<link ref="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+		<script src="controllers/app.js"></script>
+		<script src="controllers/header.controller.js"></script>
+		<script src="controllers/body.controller.js"></script>
+		<script src="controllers/socket.controller.js"></script>
+	</head>
+	<body ng-app="angularLinax">
+	
+		<div id="mainBoard">
+			<div id="header" ng-controller="headerCtrl" align="center">
+			<input type="button" value="Click" ng-model="title" onclick="change()">
+				<img class="imgLeft" ng-src="{{img[0].src}}">
+				<img class="imgRight" ng-src="{{img[1].src}}">
+				<label class="title" ng-bind="title"></label>
+			</div>
+			<div id="body" ng-controller="bodyCtrl">
+				<!--<div linax-data></div>-->
+				
+			<table width='100%'>
+			<tr><td>DATE</td><td>PLAN</td><td>ACTUAL</td><td>SHIFT 1</td><td>SHIFT 2</td><td>SHIFT 3</td></tr>					 	
+				<tr ng-repeat="item in data">				
+					<td ng-class="styles">{{item.NAME}}</td>
+					<td><input type='type' value='{{item.PLAN}}'></td>
+					<td ng-class="styles">{{item.ACTUAL}}</td>
+					<td>{{item.SHIFT_1}}</td>
+					<td>{{item.SHIFT_2}}</td>
+					<td>{{item.SHIFT_3}}</td>
+				</tr>			 
+			</table>
+			</div>
+			
+		</div>
+	</body>
+</html>

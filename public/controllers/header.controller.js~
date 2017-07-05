@@ -1,0 +1,33 @@
+var title = "CASTING MACHINE PRODUCTIVITY";
+/*
+app.controller('headerCtrl',function($scope,headerFact){
+	$scope.title = headerFact.title;
+	$scope.img = [
+		{name : 'linax', src : 'images/linax.jpg'},
+		{name : 'lixil', src : 'images/lixil.jpg'}
+	];
+});
+*/
+function headerCtrl($scope,headerFact){
+	$scope.title = headerFact.title;
+	$scope.img = [
+		{name : 'linax', src : 'images/linax.jpg'},
+		{name : 'lixil', src : 'images/lixil.jpg'}
+	];
+}
+app.factory('headerFact',function(){
+	var fact = {};
+	fact.title = title;
+	return fact;
+});
+function getScope(){
+	var sel = 'div[ng-controller="headerCtrl"]';
+	return angular.element(sel).scope();
+}
+function change(){
+	//alert('s');
+	var $scope = getScope();
+	$scope.title = "Title Changed";
+	$scope.$apply();
+	
+}
